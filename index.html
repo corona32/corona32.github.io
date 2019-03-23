@@ -17,7 +17,12 @@
             // wx.miniProgram.navigateTo({
             //     url: "../index/index"
             // })
-            wx.miniProgram.navigateBack({ delta: 1 });
+
+            // wx.miniProgram.navigateBack({ delta: 1 });
+
+            wx.miniProgram.reLaunch({
+                url: "../index/index"
+            })
         }
     </script>
 </head>
