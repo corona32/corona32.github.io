@@ -1,19 +1,30 @@
 <!doctype html>
 <html>
-    <head>
-        <!-- 声明当前页面的编码集：charset=gbk,gb2312(中文编码) , utf-8(国际编码) -->
-        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-        <!-- 声明当前页面的三元素 -->
-        <title>Corona's Kitchen</title>
-        <meta name='keywords' content='关键词,关键词'>
-        <meta name='description' content=''>
- 
-        <!-- js/css -->
- 
-    </head>
+
+<head>
+    <!-- 声明当前页面的编码集：charset=gbk,gb2312(中文编码) , utf-8(国际编码) -->
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <!-- 声明当前页面的三元素 -->
+    <title>Corona's Kitchen</title>
+    <meta name='keywords' content='关键词,关键词'>
+    <meta name='description' content=''>
+
+    <!-- js/css -->
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js">
+    </script>
+    <script>
+        function testNavigateTo() {
+            wx.miniProgram.navigateTo("../index/index")
+        }
+    </script>
+</head>
+
 <body>
- 
-精于勤<br />荒于嬉
- 
+
+    <form action="">
+        <input type="button" value="fuck me if you can !!!" onclick="testNavigateTo()" />
+    </form>
+
 </body>
+
 </html>
