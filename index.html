@@ -14,7 +14,9 @@
     </script>
     <script>
         function testNavigateTo() {
-            wx.miniProgram.navigateTo("../index/index")
+            wx.miniProgram.navigateTo({
+                url: "../index/index"
+            })
         }
     </script>
 </head>
