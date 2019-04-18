@@ -31,11 +31,11 @@
         wx_miniprogram_tag.type = "text/javascript";
         if (window.location.hash.indexOf("qq") >= 0)
             wx_miniprogram_tag.src = "https://qzonestyle.gtimg.cn/qzone/qzact/act/external/qqjssdk/qqjssdk-1.0.0.js";
-        else
+        else if (window.navigator.userAgent.indexOf('miniprogram'))
             wx_miniprogram_tag.src = "https://res.wx.qq.com/open/js/jweixin-1.3.2.js";
         head.appendChild(wx_miniprogram_tag);
-        console.log(wx_miniprogram_tag.src);
 
+        console.log(wx_miniprogram_tag.src);
         function testWx(item) {
             switch (item) {
                 case 'navigateTo':
