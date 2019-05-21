@@ -1,87 +1,31 @@
-<!doctype html>
-<html>
+---
+layout: default
+---
 
-<head>
-    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-    <!-- <meta name="viewport"
-        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" /> -->
-    <title>Corona's Kitchen</title>
-    <!-- <meta name='keywords' content='关键词,关键词'>
-    <meta name='description' content=''> -->
 
-    <style>
-        .wx-btn {
-            width: 100%;
-            height: 10rem;
-            line-height: 10rem;
-            color: #ffffff;
-            background: #2BA245;
-            font-size: 5rem;
-            text-align: center;
-            margin: 2rem;
-        }
-    </style>
+ <div class="post-container">
 
-    <!-- js/css -->
-    <!-- <script type="text/javascript" src="https://qzonestyle.gtimg.cn/qzone/qzact/act/external/qqjssdk/qqjssdk-1.0.0.js"></script> -->
-    <!-- <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script> -->
-    <script>
-        var head = document.getElementsByTagName("head")[0];
-        var wx_miniprogram_tag = document.createElement("script");
-        wx_miniprogram_tag.type = "text/javascript";
-        if (window.location.hash.indexOf("qq") >= 0)
-            wx_miniprogram_tag.src = "https://qzonestyle.gtimg.cn/qzone/qzact/act/external/qqjssdk/qqjssdk-1.0.0.js";
-        else if (window.navigator.userAgent.indexOf('miniprogram'))
-            wx_miniprogram_tag.src = "https://res.wx.qq.com/open/js/jweixin-1.3.2.js";
-        head.appendChild(wx_miniprogram_tag);
+  <h2 class="post-title">Blog</h2>
 
-        console.log(wx_miniprogram_tag.src);
-        function testWx(item) {
-            switch (item) {
-                case 'navigateTo':
-                    console.log('test navigateTo');
-                    wx.miniProgram.navigateTo({
-                        url: '../index/index'
-                    })
-                    break;
-                case 'navigateBack':
-                    console.log('test navigateBack');
-                    wx.miniProgram.navigateBack({
-                        delta: 1
-                    });
-                    break;
-                case 'reLaunch':
-                    console.log('test reLaunch');
-                    wx.miniProgram.reLaunch({
-                        url: '../index/index'
-                    })
-                    break;
-                case 'postMessage':
-                    console.log('test navigateBack && postMessage');
-                    wx.miniProgram.navigateBack({
-                        delta: 1
-                    });
-                    wx.miniProgram.postMessage({ data: 'hello, world' });
-                    break;
-            }
-        }
+  <hr>
 
-    </script>
-</head>
+  {% for post in site.posts %}
+    <div class ="post-preview">
+      <span class="post-title">
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+          {{ post.title }}
+        </a>
+      </span>
 
-<body>
-    <div class="wx-btn" onclick="testWx('navigateTo')">
-        navigateTo
+      <span class="post-time">
+        <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+      </span>
+
+
     </div>
-    <div class="wx-btn" onclick="testWx('navigateBack')">
-        navigateBack
-    </div>
-    <div class="wx-btn" onclick="testWx('reLaunch')">
-        reLaunch
-    </div>
-    <div class="wx-btn" onclick="testWx('postMessage')">
-        postMessage
-    </div>
-</body>
 
-</html>
+    {% endfor %}
+
+
+
+</div>
