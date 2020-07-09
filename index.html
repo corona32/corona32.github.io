@@ -1,31 +1,23 @@
----
-layout: default
----
+<!doctype html>
 
+<html lang="en">
 
- <div class="post-container">
+<head>
+    <meta charset="utf-8">
+    <title>TEST weiyun scheme</title>
+    <meta name="description" content="Test weiyun scheme">
+    <meta name="author" content="Corona">
+</head>
 
-  <h2 class="post-title">Blog</h2>
+<script>
+    function test() {
+        console.log('启动微云')
+        window.location.href = 'weiyun:///';
+    }
+</script>
 
-  <hr>
+<body>
+    <button onclick='test()' width='200px' height='100px'>启动微云</button>
+</body>
 
-  {% for post in site.posts %}
-    <div class ="post-preview">
-      <span class="post-title">
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-          {{ post.title }}
-        </a>
-      </span>
-
-      <span class="post-time">
-        <p>{{ post.date | date: "%b %-d, %Y" }}</p>
-      </span>
-
-
-    </div>
-
-    {% endfor %}
-
-
-
-</div>
+</html>
